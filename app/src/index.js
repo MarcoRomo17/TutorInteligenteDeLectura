@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CreateQuestion } from "./CreateQuestion";
 import { SeeingQuestions } from "./SeeingQuestions";
+import { Login } from "./Login";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path:"/SeeingQuestions",
     element: <SeeingQuestions/>
+  },
+  {
+    path:"/Login",
+    element:<Login/>
   }
 ]);
 
