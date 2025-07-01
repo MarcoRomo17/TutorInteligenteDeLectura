@@ -8,3 +8,10 @@ export interface IUser {
     email: string;
    
 }
+
+export interface IText {
+    title: string;
+    content:string;
+    estimatedLevel:string;
+   
+}
