@@ -6,5 +6,6 @@ export interface IUser {
     ap:string;
     am:string;
     email: string;
-   
+    password:string,
+    rol: string;
 }

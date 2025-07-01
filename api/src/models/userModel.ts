@@ -17,7 +17,15 @@ const usersEsquema= new Schema<IUser>({
     email:{
         type:String,
         required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    rol:{
+        type:String,
+        required:true
     }
 })
 
-export const conductorModel= model("USERS", usersEsquema)
+export const userModel= model("USERS", usersEsquema)
