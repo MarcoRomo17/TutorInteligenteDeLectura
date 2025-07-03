@@ -1,6 +1,8 @@
 import  { Application, Response, Request } from "express";
 import cors from "cors";
 import express from "express"
+import { allUsers, deleteUser, oneUser, registerUser } from "./controllers/userController";
+import { uploadText } from "./controllers/TextController";
 
 
 
@@ -17,6 +19,11 @@ app.get("/", (_req: Request,res: Response)=>{
 
 })
 //ENPOINTS
+app.post("/user/register", registerUser)
+app.get("/user/getAll", allUsers)
+app.post("/user/oneUser", oneUser)
+app.delete("/user/delete", deleteUser)
 
+app.post("/text/upload", uploadText)
 
 export default app;

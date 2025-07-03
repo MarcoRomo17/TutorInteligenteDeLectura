@@ -6,11 +6,8 @@ export interface IUser {
     ap:string;
     am:string;
     email: string;
-<<<<<<< HEAD
-    password:string,
-    rol: string;
-}
-=======
+    password:string;
+    rol:string;
    
 }
 
@@ -20,4 +17,3 @@ export interface IText {
     estimatedLevel:string;
    
 }
->>>>>>> fce638c9aa9ea6b6299818c3e9339342df1d60ad

@@ -36,7 +36,6 @@ export const getSugested = async (req:Request, res:Response):Promise<any>=>{
 
     try{
         const text = await textModel.find({email:req.body.estimatedLevel} )
-
         if(!text){
             return res.status(400).json({
                 msg: "No hay textos recomendados"
