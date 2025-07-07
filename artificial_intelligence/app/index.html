@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat con IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: #f8f8f8;
+        }
+
+        #chat {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .mensaje {
+            margin: 10px 0;
+        }
+
+        .usuario {
+            text-align: right;
+            color: #333;
+        }
+
+        .bot {
+            text-align: left;
+            color: #0077cc;
+        }
+
+        input, button {
+            padding: 10px;
+            margin-top: 1rem;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 18%;
+            background: #0077cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat">
+        <div id="mensajes"></div>
+        <input type="text" id="mensajeInput" placeholder="Escribe tu mensaje...">
+        <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+
+    <script>
+        async function enviarMensaje() {
+            const input = document.getElementById("mensajeInput");
+            const texto = input.value.trim();
+            if (!texto) return;
+
+            mostrarMensaje("Tú", texto, "usuario");
+
+            try {
+                const response = await fetch(`http://localhost:5000/ia/chat?mensaje=${encodeURIComponent(texto)}`);
+                const data = await response.json();
+
+                mostrarMensaje("Bot", data.respuesta, "bot");
+            } catch (err) {
+                mostrarMensaje("Error", "No se pudo conectar con el bot", "bot");
+            }
+
+            input.value = "";
+        }
+
+        function mostrarMensaje(remitente, texto, clase) {
+            const div = document.createElement("div");
+            div.className = `mensaje ${clase}`;
+            div.innerText = `${remitente}: ${texto}`;
+            document.getElementById("mensajes").appendChild(div);
+        }
+    </script>
+</body>
+</html>
