@@ -7,7 +7,7 @@ import json
 ia_bp = Blueprint("ia_bp", __name__, url_prefix="/ia")
 
 # Crear el chatbot
-chatbot = ChatBot("Bot de Mamá de Fátima", read_only=True)
+chatbot = ChatBot("Bot Inteligente", read_only=True)
 
 # Entrenar la IA
 @ia_bp.route("/training", methods=["POST"])
