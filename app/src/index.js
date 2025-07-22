@@ -12,6 +12,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CreateQuestion } from "./CreateQuestion";
 import { SeeingQuestions } from "./SeeingQuestions";
 import { Login } from "./Login";
+import { CreateUser } from "./CreateUser";
+import { CreateProfessor } from "./CreateProfessor";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
   {
     path:"/Login",
     element:<Login/>
+  },
+  {
+    path:"/CreateUser",
+    element:<CreateUser/>
+  },
+  {
+    path:"/CreateProfessor",
+    element:<CreateProfessor/>
   }
 ]);
 
