@@ -14,6 +14,7 @@ import { SeeingQuestions } from "./SeeingQuestions";
 import { Login } from "./Login";
 import { CreateUser } from "./CreateUser";
 import { CreateProfessor } from "./CreateProfessor";
+import { CreateText } from "./registerText";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,12 @@ const router = createBrowserRouter([
   {
     path:"/CreateProfessor",
     element:<CreateProfessor/>
-  }
+  },
+    {
+    path:"/registerText",
+    element:<CreateText/>
+  },
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

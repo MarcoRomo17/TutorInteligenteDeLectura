@@ -100,4 +100,25 @@ export const deleteUser = async (req:Request, res: Response): Promise<any>=>{
     }
 }
 
+export const singin = async (req:Request, res:Response):Promise<any>=>{
+    try{
+        const user = await userModel.findOne({email:req.body.email, password:req.body.password} )
+
+        if(!user){
+            return res.status(400).json({
+                msg: "No existe usuario"
+            })
+        }
+
+        return res.status(200).json({
+            msg: "Usuario existe"
+        })
+
+    }catch(error){
+        return res.status(500).json({
+            msg: "Hubo un error ingresar el usuario"
+        })
+    }
+}
+
 
