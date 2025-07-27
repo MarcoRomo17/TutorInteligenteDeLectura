@@ -21,7 +21,7 @@ export const registerUser= async (req:Request, res: Response): Promise<any>=>{
         }
 
 
-        const rol= "Usuario"
+        const rol= "student"
    
 
         const registered= await userModel.create({
@@ -170,5 +170,47 @@ export const loginUser= async (req:Request, res: Response): Promise<any>=>{
         console.log("Error al logar")
         console.log(error)
         return res.status(500).json({msg:"Fallo al intentar logear"})
+    }
+}
+
+export const countAllUsers= async (req:Request, res: Response): Promise<any>=>{
+    try {
+
+        const allUsers = await userModel.find().countDocuments()
+        return res.status(200).json({msg:"Todos los usuarios son: ", allUsers})
+
+
+    } catch (error) {
+        console.log("Error al traer usuarios")
+        console.log(error)
+        return res.status(500).json({msg:"Fallo al intentar traer usuarios."})
+    }
+}
+
+export const countAllstudents= async (req:Request, res: Response): Promise<any>=>{
+    try {
+
+        const allStudents = await userModel.find({rol:"student"}).countDocuments()
+        return res.status(200).json({msg:"Todos los usuarios son: ", allStudents})
+
+
+    } catch (error) {
+        console.log("Error al traer usuarios")
+        console.log(error)
+        return res.status(500).json({msg:"Fallo al intentar traer usuarios."})
+    }
+}
+
+export const countAllTeachers= async (req:Request, res: Response): Promise<any>=>{
+    try {
+
+        const allTeachers = await userModel.find({rol:"Teacher"}).countDocuments()
+        return res.status(200).json({msg:"Todos los usuarios son: ", allTeachers})
+
+
+    } catch (error) {
+        console.log("Error al traer usuarios")
+        console.log(error)
+        return res.status(500).json({msg:"Fallo al intentar traer usuarios."})
     }
 }
