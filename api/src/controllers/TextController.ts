@@ -125,3 +125,16 @@ export const deleteText= async(req:Request, res:Response):Promise<any>=>{
         }
 }
 
+export const countAllTexts= async (req:Request, res: Response): Promise<any>=>{
+    try {
+
+        const allTexts = await textModel.find().countDocuments()
+        return res.status(200).json({msg:"Todos las lecturas son: ", allTexts})
+
+
+    } catch (error) {
+        console.log("Error al traer lecturas")
+        console.log(error)
+        return res.status(500).json({msg:"Fallo al intentar traer lecturas."})
+    }
+}
