@@ -1,8 +1,8 @@
 import  { Application, Response, Request } from "express";
 import cors from "cors";
 import express from "express"
-import { allUsers, deleteUser, oneUser, registerUser, singin } from "./controllers/userController";
-import { getSugested, uploadText } from "./controllers/TextController";
+import { allUsers, deleteUser, loginUser, oneUser, registerUser } from "./controllers/userController";
+import { bringAllText, deleteText, getSugested, updateText, uploadText } from "./controllers/TextController";
 
 
 
@@ -24,9 +24,12 @@ app.post("/user/register", registerUser)
 app.get("/user/getAll", allUsers)
 app.post("/user/oneUser", oneUser)
 app.delete("/user/delete", deleteUser)
-app.post("/user/sign", singin)
+app.post("/user/sign", loginUser)
 
 app.post("/text/upload", uploadText)
 app.get("/text/sugested", getSugested)
+app.get("/text/getAll", bringAllText)
+app.delete("/text/delete", deleteText)
+app.put("/text/update", updateText)
 
 export default app;

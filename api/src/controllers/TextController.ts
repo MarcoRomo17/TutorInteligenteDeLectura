@@ -34,7 +34,7 @@ export const uploadText= async (req: Request, res: Response,): Promise<any> => {
 
 export const bringAllText= async (req: Request, res: Response,): Promise<any> => {
     try {
-       const allTexts= textModel.find()
+       const allTexts= await textModel.find()
 
        if(!allTexts){//configuramos un mensjae cuando no haya textos
         return res.status(200).json({"msg":"No hubo error, no hay textos"})
@@ -112,7 +112,7 @@ export const deleteText= async(req:Request, res:Response):Promise<any>=>{
                 msg: "falta el id"
             })
         }
-            const deleted = textModel.findOneAndDelete({_id:id})
+            const deleted = await textModel.findOneAndDelete({_id:id})
 
                   return res.status(200).json({"msg":"eliminado con exito"})
 
