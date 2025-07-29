@@ -36,8 +36,7 @@ app.get("/user/count/teachers", countAllTeachers)
 
 app.post("/text/upload", uploadText)
 app.get("/text/bringAll", bringAllText)
-app.get("/text/sugested", getSugested)
-app.get("/text/getAll", bringAllText)
+app.get("/text/sugested", getSugested)//este no se como hacerlo jalar
 app.delete("/text/delete", deleteText)
 app.put("/text/update", updateText)
 app.get("/text/count/all", countAllTexts)
