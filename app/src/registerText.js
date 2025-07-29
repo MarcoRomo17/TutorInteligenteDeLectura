@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button, Card, Container, Form, Row, Col } from "react-bootstrap";
+import axios from "axios";
 
 export const CreateText = () => {
   const [textData, setTextData] = useState({
     title: "",
-    category: "",
+    estimatedLevel: "",
     content: "",
   });
 
@@ -14,7 +15,7 @@ export const CreateText = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/texts", {
+      const response = await fetch("http://localhost:4010/text/upload", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,6 +38,15 @@ export const CreateText = () => {
       console.error("Fetch error:", error);
     }
   };
+
+   const registerText = async ()=>{
+    try {
+      await axios.post("", textData)
+    
+    } catch (error) {
+      
+    }
+  }
 
   return (
     <Container className="py-5">
@@ -64,12 +74,12 @@ export const CreateText = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label className="fw-semibold">Categoría</Form.Label>
+              <Form.Label className="fw-semibold">Nivel estimado</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ej. Ciencia, Cuento, Historia"
+                placeholder="Ej. Facil, Medio, Dificil"
                 value={textData.category}
-                onChange={(e) => handleChange("category", e.target.value)}
+                onChange={(e) => handleChange("estimatedLevel", e.target.value)}
                 className="rounded-3"
               />
             </Form.Group>

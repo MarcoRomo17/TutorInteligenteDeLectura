@@ -1,33 +1,38 @@
+import axios from "axios";
 import { useState } from "react";
 import { Button, Card, Container, Form, Alert } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
 
 export const Login = () => {
-  // Usuario hardcodeado
-  const usuarioValido = {
-    correo: "user@gmail.com",
-    password: "12345",
-  };
+  const navigate = useNavigate();
 
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
-  const handleLogin = () => {
+
+  const handleLogin = async () => {
     if (correo.trim() === "" || password.trim() === "") {
-      setError("Por favor, completa todos los campos.");
+      alert("Por favor, completa todos los campos.");
       return;
     }
-
-    // Si es que el email y password no son correctos
-    if (correo !== usuarioValido.correo || password !== usuarioValido.password) {
-      setError("Correo o contraseña incorrectos.");
-      return;
+     const data = {
+      email: correo,
+      password: password
+    }
+    try {
+      await axios.post("http://localhost:4010/user/sign", data)
+      alert("¡Inicio de sesión exitoso!");
+      navigate("/registerText")
+    
+    } catch (error) {
+      console.log(error)
     }
 
-    // Si es que el email y password son correctos
-    setError("");
-    alert("¡Inicio de sesión exitoso!");
+
   };
+
+
 
   return (
     <Container className="py-5">
@@ -57,12 +62,6 @@ export const Login = () => {
                 className="rounded-3"
               />
             </Form.Group>
-
-            {error && (
-              <Alert variant="danger" className="rounded-3">
-                {error}
-              </Alert>
-            )}
 
             <div className="text-center mt-3">
               <Button
