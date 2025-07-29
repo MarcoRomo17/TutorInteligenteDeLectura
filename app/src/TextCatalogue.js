@@ -1,19 +1,38 @@
 import { useEffect, useState } from "react"
-import { Button, Card, Container } from "react-bootstrap"
+import { Button, Card, Container, Row, Col } from "react-bootstrap"
 import axios from "axios"
 
 export const Catalogue = () => {
     const [data, setData] = useState([])
+    const [metrics, setMetrics] = useState({
+        text: 0,
+        users: 0
+    })
 
    useEffect(() => {
+       getMetrics()
         getText()
+     
     }, []);
 
     const getText = async () =>{
         try {
             const texts = await axios.get("http://localhost:4010/text/getAll")
             setData(texts.data.allTexts)
-            console.log(texts)
+        } catch (error) {
+            console.log("error al obtener datos", error)
+        }
+    }
+
+    const getMetrics = async () =>{
+        try {
+            const metricText = await axios.get("http://localhost:4010/text/count/all")
+            const metricUser = await axios.get("http://localhost:4010/user/count/all")
+
+               setMetrics({
+                    text: metricText.data.allTexts,
+                    users: metricUser.data.allUsers
+                })
         } catch (error) {
             console.log("error al obtener datos", error)
         }
@@ -40,6 +59,20 @@ export const Catalogue = () => {
         <Container className="py-5">
   <h1 className="fw-bold text-primary mb-4">Catálogo</h1>
 
+    <Card className="mb-4 shadow-sm rounded-4 p-3 bg-light">
+        <Card.Body>
+          <Row>
+            <Col md={6}>
+              <h5 className="fw-bold">Total de textos</h5>
+              <p className="fs-4 text-primary">{metrics.text}</p>
+            </Col>
+            <Col md={6}>
+              <h5 className="fw-bold">Total de usuarios</h5>
+              <p className="fs-4 text-success">{metrics.users}</p>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
   <Card className="shadow-sm rounded-4 p-3">
     <Card.Body>
       {data.length === 0 ? (
