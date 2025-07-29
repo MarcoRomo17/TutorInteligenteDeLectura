@@ -16,6 +16,7 @@ import { CreateUser } from "./CreateUser";
 import { CreateProfessor } from "./CreateProfessor";
 import { CreateText } from "./registerText";
 import { Catalogue } from "./TextCatalogue";
+import { Results } from "./Results";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
     path:"/Catalogue",
     element:<Catalogue/>
   },
+  {
+    path:"/Results",
+    element:<Results/>
+  }
 
 ]);
 
