@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CreateQuestion } from "./CreateQuestion";
 import { SeeingQuestions } from "./SeeingQuestions";
 import { Login } from "./Login";
+import Dashboard from './Dashboard';
 import { CreateUser } from "./CreateUser";
 import { CreateProfessor } from "./CreateProfessor";
 import { CreateText } from "./registerText";
@@ -54,7 +55,12 @@ const router = createBrowserRouter([
   {
     path:"/Results",
     element:<Results/>
+  },
+  {
+    path:"/Dashboard",
+    element:<Dashboard/>
   }
+
 
 ]);
 

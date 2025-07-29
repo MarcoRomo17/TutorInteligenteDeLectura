@@ -1,0 +1,80 @@
+import React from 'react';
+import { Container, Row, Col, Card, Button, Form, InputGroup } from 'react-bootstrap';
+import { PersonCircle, QuestionCircle, Book, PeopleFill } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
+
+const Dashboard = () => {
+    return (
+        <Container style={{ padding: '20px' }}>
+            <Row style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Col>
+                    <h3 style={{ fontWeight: 'bold', color: '#0d6efd' }}>Tutor Inteligente</h3>
+                </Col>
+                <Col style={{ textAlign: 'right' }}>
+                    <Link to="/account">
+                        <Button variant="light" style={{ padding: '5px', borderRadius: '50%' }}>
+                            <PersonCircle size={32} />
+                        </Button>
+                    </Link>
+                </Col>
+            </Row>
+
+            <Row style={{ marginBottom: '20px' }}>
+                <Col>
+                    <InputGroup>
+                        <Form.Control placeholder="Enter your question" />
+                        <Button variant="primary">Ask</Button>
+                    </InputGroup>
+                </Col>
+            </Row>
+
+            <Row style={{ textAlign: 'center', marginBottom: '20px' }}>
+                <Col md={4} style={{ marginBottom: '15px' }}>
+                    <Card style={{ height: '100%', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
+                        <Card.Body>
+                            <QuestionCircle size={40} style={{ color: '#0d6efd', marginBottom: '10px' }} />
+                            <Card.Title>Questions</Card.Title>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col md={4} style={{ marginBottom: '15px' }}>
+                    <Card style={{ height: '100%', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
+                        <Card.Body>
+                            <PeopleFill size={40} style={{ color: '#0d6efd', marginBottom: '10px' }} />
+                            <Card.Title>Tutors</Card.Title>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col md={4} style={{ marginBottom: '15px' }}>
+                    <Card style={{ height: '100%', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
+                        <Card.Body>
+                            <Book size={40} style={{ color: '#0d6efd', marginBottom: '10px' }} />
+                            <Card.Title>Texts</Card.Title>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+
+            <Row style={{ textAlign: 'center' }}>
+                <Col md={6} style={{ marginBottom: '15px' }}>
+                    <Card style={{ boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
+                        <Card.Body>
+                            <h5 style={{ marginBottom: '5px' }}>Lecturas registradas</h5>
+                            <h3 style={{ color: 'green' }}>0</h3>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col md={6} style={{ marginBottom: '15px' }}>
+                    <Card style={{ boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
+                        <Card.Body>
+                            <h5 style={{ marginBottom: '5px' }}>Usuarios registrados</h5>
+                            <h3 style={{ color: 'green' }}>0</h3>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
+    );
+};
+
+export default Dashboard;
