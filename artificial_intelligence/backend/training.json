@@ -1,0 +1,26 @@
+{
+  "fantasía": [
+    "El nombre del viento - Patrick Rothfuss",
+    "La historia interminable - Michael Ende",
+    "El Hobbit - J.R.R. Tolkien"
+  ],
+  "ciencia ficción": [
+    "Dune - Frank Herbert",
+    "Fundación - Isaac Asimov",
+    "Neuromante - William Gibson"
+  ],
+  "romance": [
+    "Orgullo y prejuicio - Jane Austen",
+    "Yo antes de ti - Jojo Moyes",
+    "Bajo la misma estrella - John Green"
+  ],
+  "terror": [
+    "It - Stephen King",
+    "Drácula - Bram Stoker",
+    "El resplandor - Stephen King"
+  ],
+  "poesía": [
+    "Veinte poemas de amor - Pablo Neruda",
+    "Antología poética - Mario Benedetti"
+  ]
+}

@@ -2,4 +2,3 @@ Flask
 flask-cors
 chatterbot
 chatterbot_corpus
-pyyaml
