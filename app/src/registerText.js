@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button, Card, Container, Form, Row, Col } from "react-bootstrap";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const CreateText = () => {
+  const navigate = useNavigate()
   const [textData, setTextData] = useState({
     title: "",
     estimatedLevel: "",
@@ -26,11 +27,10 @@ export const CreateText = () => {
       if (response.ok) {
         const result = await response.json();
         console.log("Texto registrado con éxito:", result);
-        alert("Texto registrado correctamente ✅");
-        // Limpia el formulario si deseas
-        setTextData({ title: "", category: "", content: "" });
+        alert("Texto registrado correctamente ");
+        navigate("/Catalogue")
       } else {
-        alert("Hubo un error al registrar el texto ❌");
+        alert("Hubo un error al registrar el texto ");
         console.error("Error:", await response.text());
       }
     } catch (error) {
@@ -38,15 +38,6 @@ export const CreateText = () => {
       console.error("Fetch error:", error);
     }
   };
-
-   const registerText = async ()=>{
-    try {
-      await axios.post("", textData)
-    
-    } catch (error) {
-      
-    }
-  }
 
   return (
     <Container className="py-5">

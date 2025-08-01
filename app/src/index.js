@@ -12,10 +12,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CreateQuestion } from "./CreateQuestion";
 import { SeeingQuestions } from "./SeeingQuestions";
 import { Login } from "./Login";
+import Dashboard from './Dashboard';
 import { CreateUser } from "./CreateUser";
 import { CreateProfessor } from "./CreateProfessor";
 import { CreateText } from "./registerText";
 import { Catalogue } from "./TextCatalogue";
+import { Results } from "./Results";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,15 @@ const router = createBrowserRouter([
     path:"/Catalogue",
     element:<Catalogue/>
   },
+  {
+    path:"/Results",
+    element:<Results/>
+  },
+  {
+    path:"/Dashboard",
+    element:<Dashboard/>
+  }
+
 
 ]);
 
