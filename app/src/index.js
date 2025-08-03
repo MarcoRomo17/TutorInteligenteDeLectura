@@ -18,6 +18,7 @@ import { CreateProfessor } from "./CreateProfessor";
 import { CreateText } from "./registerText";
 import { Catalogue } from "./TextCatalogue";
 import { Results } from "./Results";
+import { Users } from "./Users";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
   {
     path:"/Dashboard",
     element:<Dashboard/>
+  },
+  {
+    path:"/Users",
+    element:<Users/>
   }
 
 
