@@ -1,0 +1,50 @@
+categories:
+  - recomendaciones
+conversations:
+  - - Hola, ¿me ayudas a elegir un libro?
+    - |
+        ¡Claro! Basado en tu historial de fantasía, ciencia ficción, romance, terror y poesía, puedo recomendarte:
+        - ¿Prefieres algo como "El nombre del viento" (aventura mágica) o "Dune" (ciencia ficción épica)?
+        - También tengo clásicos como "Drácula" o poesía de Neruda
+        ¿Hacia qué género te inclinas hoy?
+
+  - - Me gusta la fantasía
+    - |
+        ¡Perfecto! Según tus lecturas previas, te sugiero:
+        - Fantasía épica: "El Señor de los Anillos"
+        - Fantasía oscura: "La Torre Oscura" de Stephen King
+        - Fantasía urbana: "Neverwhere" de Neil Gaiman
+        ¿Quieres explorar alguna de estas líneas?
+
+  - - Prefiero los clásicos
+    - |
+        Entre tus clásicos guardados tienes:
+        - Terror: "Frankenstein"
+        - Romance: "Cumbres Borrascosas"
+        - Poesía: "Rimas y Leyendas"
+        ¿Quieres un clásico que combine géneros como "Drácula" (terror/romance)?
+
+  - - Busco algo fácil de leer
+    - |
+        Estas son opciones accesibles:
+        - "Harry Potter y la piedra filosofal"
+        - "Yo antes de ti"
+        - "Relatos cortos de Poe"
+        ¿Alguna te llama la atención?
+
+  - - Quiero un desafío literario
+    - |
+        ¡Excelente! Te recomiendo:
+        - "Fundación" (ciencia ficción filosófica)
+        - "Canto general" (poesía épica de Neruda)
+        - "Anna Karenina" (romance psicológico profundo)
+        ¿Cuál prefieres analizar?
+
+  - - No sé qué leer
+    - |
+        Veo que disfrutaste "La historia interminable" y "Orgullo y prejuicio". 
+        ¿Qué te atrajo más de ellos?
+        1. Mundos imaginativos
+        2. Relaciones entre personajes
+        3. Estilo literario
+        4. Temas filosóficos

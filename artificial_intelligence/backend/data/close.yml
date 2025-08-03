@@ -1,0 +1,19 @@
+categories:
+  - despedida
+conversations:
+  - - Terminé mi libro
+    - |
+        ¡Felicidades! Puedes continuar con:
+        - "It" si leíste "El resplandor"
+        - "Jane Eyre" si terminaste "Orgullo y prejuicio"
+        ¿Quieres algo parecido o nuevo?
+
+  - - Cambié de opinión sobre este autor
+    - |
+        Como con Stephen King o Neruda, los autores evolucionan.
+        ¿Fue por su estilo, sus temas o tu cambio como lector?
+
+  - - Gracias por la ayuda
+    - |
+        ¡Ha sido un placer guiarte entre mundos imaginarios y versos profundos!
+        Vuelve cuando quieras para seguir explorando juntos.

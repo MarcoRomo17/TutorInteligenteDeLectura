@@ -1,26 +1,37 @@
 {
   "fantasía": [
-    "El nombre del viento - Patrick Rothfuss",
-    "La historia interminable - Michael Ende",
-    "El Hobbit - J.R.R. Tolkien"
+    "El nombre del viento - Patrick Rothfuss | La historia de Kvothe, un hombre legendario que relata su vida como músico, mago y aventurero en un mundo de magia y misterio.",
+    "La historia interminable - Michael Ende | Un niño descubre un libro mágico que lo transporta a Fantasía, un reino en peligro que solo él puede salvar.",
+    "El Hobbit - J.R.R. Tolkien | Bilbo Bolsón, un hobbit tranquilo, se embarca en una épica aventura para ayudar a un grupo de enanos a recuperar su hogar de un dragón.",
+    "Juego de Tronos - George R.R. Martin | Intrigas políticas, guerras y traiciones en Poniente, donde familias nobles luchan por el Trono de Hierro.",
+    "Harry Potter y la piedra filosofal - J.K. Rowling | Un niño descubre que es un mago y comienza su educación en Hogwarts, donde enfrentará misterios y una oscura amenaza."
   ],
   "ciencia ficción": [
-    "Dune - Frank Herbert",
-    "Fundación - Isaac Asimov",
-    "Neuromante - William Gibson"
+    "Dune - Frank Herbert | En un futuro lejano, el joven Paul Atreides se ve envuelto en una lucha por el control del desértico planeta Arrakis y su recurso más valioso: la especia.",
+    "Fundación - Isaac Asimov | El psicohistoriador Hari Seldon predice el colapso del Imperio Galáctico y crea un plan para preservar el conocimiento humano.",
+    "Neuromante - William Gibson | Case, un hacker obsoleto, es reclutado para un último trabajo que lo llevará al corazón de una inteligencia artificial despiadada.",
+    "1984 - George Orwell | En un mundo distópico, Winston Smith desafía al régimen totalitario que controla hasta los pensamientos de las personas.",
+    "Un mundo feliz - Aldous Huxley | Una sociedad futurista donde los humanos son diseñados genéticamente y el dolor ha sido erradicado, pero a un costo terrible."
   ],
   "romance": [
-    "Orgullo y prejuicio - Jane Austen",
-    "Yo antes de ti - Jojo Moyes",
-    "Bajo la misma estrella - John Green"
+    "Orgullo y prejuicio - Jane Austen | La historia de Elizabeth Bennet y el orgulloso Sr. Darcy, en una danza de malentendidos y amor en la Inglaterra del siglo XIX.",
+    "Yo antes de ti - Jojo Moyes | Una joven cuidadora y un hombre paralizado forman un vínculo que cambiará sus vidas para siempre.",
+    "Bajo la misma estrella - John Green | Dos adolescentes con cáncer se enamoran mientras enfrentan la fragilidad de la vida y la esperanza.",
+    "Cumbres Borrascosas - Emily Brontë | Una oscura historia de amor y venganza en los páramos de Yorkshire, donde las pasiones destruyen y perdonan.",
+    "Anna Karenina - León Tolstói | El trágico romance de una mujer atrapada entre el deber y el deseo en la alta sociedad rusa."
   ],
   "terror": [
-    "It - Stephen King",
-    "Drácula - Bram Stoker",
-    "El resplandor - Stephen King"
+    "It - Stephen King | Un payaso demoníaco aterroriza a un grupo de niños, prometiendo regresar años después para terminar lo que empezó.",
+    "Drácula - Bram Stoker | El conde Drácula viaja a Inglaterra para saciar su sed de sangre, mientras un grupo de personas intenta detenerlo.",
+    "El resplandor - Stephen King | Un escritor y su familia se mudan a un hotel aislado, donde fuerzas malignas los arrastran hacia la locura.",
+    "Frankenstein - Mary Shelley | Un científico obsesionado crea vida, pero su criatura, rechazada por la sociedad, busca venganza.",
+    "El exorcista - William Peter Blatty | Una niña poseída por un demonio desata una batalla entre el bien y el mal que pondrá a prueba la fe de todos."
   ],
   "poesía": [
-    "Veinte poemas de amor - Pablo Neruda",
-    "Antología poética - Mario Benedetti"
+    "Veinte poemas de amor - Pablo Neruda | Una colección de poemas apasionados que exploran el amor, la pérdida y la belleza de la existencia.",
+    "Antología poética - Mario Benedetti | Versos que capturan la cotidianidad, el amor y la lucha social con un lenguaje sencillo y profundo.",
+    "Rimas y Leyendas - Gustavo Adolfo Bécquer | Poemas románticos y relatos góticos que mezclan el amor idealizado con lo sobrenatural.",
+    "Hojas de hierba - Walt Whitman | Un canto a la libertad, la naturaleza y la humanidad, que redefine la poesía moderna.",
+    "Poeta en Nueva York - Federico García Lorca | Una obra surrealista que refleja la angustia y la alienación en la ciudad de los rascacielos."
   ]
 }

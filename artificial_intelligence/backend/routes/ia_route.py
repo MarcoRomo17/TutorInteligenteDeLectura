@@ -8,6 +8,8 @@ def chat_running():
     data = request.get_json("message")
     message = data.get("message")
     output_message = chat(message)
+    print(output_message)
+    
     return jsonify({
         "msg": output_message
-    })
+    }), 200
