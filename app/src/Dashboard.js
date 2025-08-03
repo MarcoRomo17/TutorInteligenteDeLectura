@@ -1,9 +1,32 @@
-import React from 'react';
+import { useEffect, useState } from "react"
 import { Container, Row, Col, Card, Button, Form, InputGroup } from 'react-bootstrap';
 import { PersonCircle, QuestionCircle, Book, PeopleFill } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Dashboard = () => {
+    const [metrics, setMetrics] = useState({
+            text: 0,
+            users: 0
+        })
+    
+       useEffect(() => {
+           getMetrics()
+        }, []);
+
+    const getMetrics = async () =>{
+        try {
+            const metricText = await axios.get("http://localhost:4010/text/count/all")
+            const metricUser = await axios.get("http://localhost:4010/user/count/all")
+
+               setMetrics({
+                    text: metricText.data.allTexts,
+                    users: metricUser.data.allUsers
+                })
+        } catch (error) {
+            console.log("error al obtener datos", error)
+        }
+    }
     return (
         <Container style={{ padding: '20px' }}>
             <Row style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -60,7 +83,7 @@ const Dashboard = () => {
                     <Card style={{ boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
                         <Card.Body>
                             <h5 style={{ marginBottom: '5px' }}>Lecturas registradas</h5>
-                            <h3 style={{ color: 'green' }}>0</h3>
+                            <h3 style={{ color: 'green' }}>{metrics.text}</h3>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -68,7 +91,7 @@ const Dashboard = () => {
                     <Card style={{ boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
                         <Card.Body>
                             <h5 style={{ marginBottom: '5px' }}>Usuarios registrados</h5>
-                            <h3 style={{ color: 'green' }}>0</h3>
+                            <h3 style={{ color: 'green' }}>{metrics.users}</h3>
                         </Card.Body>
                     </Card>
                 </Col>
