@@ -214,3 +214,39 @@ export const countAllTeachers= async (req:Request, res: Response): Promise<any>=
         return res.status(500).json({msg:"Fallo al intentar traer usuarios."})
     }
 }
+
+export const updateUser = async (req: Request, res: Response): Promise<any> => {
+    try {
+        const { userID, name, ap, am, email, password, rol } = req.body;
+
+        if (!userID) {
+            return res.status(400).json({ msg: "Falta el ID del usuario a actualizar." });
+        }
+
+        // Creamos un objeto con los campos actualizables
+        const updateFields: any = {};
+        if (name) updateFields.name = name;
+        if (ap) updateFields.ap = ap;
+        if (am) updateFields.am = am;
+        if (email) updateFields.email = email;
+        if (password) updateFields.password = password;
+        if (rol) updateFields.rol = rol;
+
+        const updatedUser = await userModel.findByIdAndUpdate(
+            userID,
+            { $set: updateFields },
+            { new: true } // Para que devuelva el nuevo documento actualizado
+        );
+
+        if (!updatedUser) {
+            return res.status(404).json({ msg: "Usuario no encontrado para actualizar." });
+        }
+
+        return res.status(200).json({ msg: "Usuario actualizado con éxito.", updatedUser });
+
+    } catch (error) {
+        console.log("Error al actualizar al usuario");
+        console.log(error);
+        return res.status(500).json({ msg: "Fallo al intentar actualizar al usuario." });
+    }
+};

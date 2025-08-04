@@ -1,7 +1,7 @@
 import  { Application, Response, Request } from "express";
 import cors from "cors";
 import express from "express"
-import { allUsers, countAllstudents, countAllTeachers, countAllUsers, deleteUser, loginUser, oneUser, registerTeacher, registerUser } from "./controllers/userController";
+import { allUsers, countAllstudents, countAllTeachers, countAllUsers, deleteUser, loginUser, oneUser, registerTeacher, registerUser, updateUser } from "./controllers/userController";
 import { bringAllText, countAllTexts, deleteText, getSugested, updateText, uploadText } from "./controllers/TextController";
 
 
@@ -31,6 +31,7 @@ app.post("/user/sign", loginUser)
 app.get("/user/count/all", countAllUsers)
 app.get("/user/count/students", countAllstudents)
 app.get("/user/count/teachers", countAllTeachers)
+app.put("/user/update", updateUser)
 
 //Text
 

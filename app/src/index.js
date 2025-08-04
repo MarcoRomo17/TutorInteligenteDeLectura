@@ -14,6 +14,7 @@ import { CreateProfessor } from "./CreateProfessor";
 import { CreateText } from "./registerText";
 import { Catalogue } from "./TextCatalogue";
 import { Results } from "./Results";
+import { Users } from "./Users";
 import Chat from "./Chat";
 
 const router = createBrowserRouter([
@@ -61,7 +62,13 @@ const router = createBrowserRouter([
       path: "/Chat",
       element: <Chat />,
    },
-]);
+  ,
+  {
+    path:"/Users",
+    element:<Users/>
+  } ])
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -74,3 +81,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
