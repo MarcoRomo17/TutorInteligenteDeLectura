@@ -1,0 +1,6 @@
+Flask
+flask-cors
+chatterbot
+chatterbot_corpus
+scikit-learn
+spacy
