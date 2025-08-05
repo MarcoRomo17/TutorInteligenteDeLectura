@@ -18,7 +18,7 @@ export const CreateUser = () => {
   const createUser = async ()=>{
     try {
       await axios.post("http://localhost:4010/user/register", data)
-      navigate("/Login")
+      navigate("/")
     
     } catch (error) {
       console.log(error)

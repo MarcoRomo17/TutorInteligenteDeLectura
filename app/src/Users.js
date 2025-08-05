@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { PersonCircle, QuestionCircle, Book, PeopleFill, Link } from 'react-bootstrap-icons';
+
 import axios from "axios";
 import {
   Button,
@@ -8,6 +10,8 @@ import {
   Spinner,
   Modal,
   Form,
+  Row,
+  Col,
 } from "react-bootstrap";
 
 export const Users = () => {
@@ -98,6 +102,19 @@ export const Users = () => {
 
   return (
     <Container>
+      
+                  <Row style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Col>
+                    <h3 style={{ fontWeight: 'bold', color: '#0d6efd' }}>Tutor Inteligente</h3>
+                </Col>
+                <Col style={{ textAlign: 'right' }}>
+                    <Link to="/account">
+                        <Button variant="light" style={{ padding: '5px', borderRadius: '50%' }}>
+                            <PersonCircle size={32} />
+                        </Button>
+                    </Link>
+                </Col>
+            </Row>
       <Card className="mt-4">
         <Card.Body>
           <Card.Title>Lista de usuarios</Card.Title>

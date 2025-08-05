@@ -4,11 +4,10 @@ import axios from "axios"
 import { UpdateTextModal } from "./update"
 import { useNavigate } from "react-router-dom";
 
-export const Catalogue = () => {
+export const TextsToUsers = () => {
     const navigate = useNavigate();
     const [data, setData] = useState([])
-    const [selectedText, setSelectedText] = useState(null);
-    const [showModal, setShowModal] = useState(false);
+
 
    useEffect(() => {
         getText()
@@ -24,24 +23,9 @@ export const Catalogue = () => {
         }
     }
 
-    const deleteText = async (id) => {
-        try {
-            await axios.delete("http://localhost:4010/text/delete", {data: { id: id }})
-            getText()
-        } catch (error) {
-            console.log("error al borrar", error)
-        }
-    }
 
-    const handleEditClick = (text) => {
-      setSelectedText(text);
-      setShowModal(true);
-    };
 
-    const handleUpdate = (updatedText) => {
-      console.log("Texto actualizado:", updatedText);
-      getText()
-    };
+ 
 
     return (
         <Container className="py-5">
@@ -68,21 +52,12 @@ export const Catalogue = () => {
                       <p><strong>Contenido:</strong> {text.content}</p>
                       <p><strong>Nivel estimado:</strong> {text.estimatedLevel}</p>
 
-                      <div className="d-flex justify-content-end gap-2 mt-3">
-                        <Button variant="warning" className="rounded-3 px-3"  onClick={() => handleEditClick({ _id: text._id, title: text.title, estimatedLevel: text.estimatedLevel, content: text.content})}>Actualizar</Button>
-                        <Button variant="danger" className="rounded-3 px-3" onClick={() => deleteText(text._id)}>Borrar</Button>
-                      </div>
                     </Card.Body>
                   </Card>
                 ))
               )}
             </Card.Body>
-            <UpdateTextModal
-                show={showModal}
-                onHide={() => setShowModal(false)}
-                textToEdit={selectedText}
-                onUpdate={handleUpdate}
-              />
+  
           </Card>
 
           
